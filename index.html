@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <title>网络安全 CTF 训练平台</title>
+
+  <!-- Vue CDN -->
+  <script src="https://unpkg.com/vue@3"></script>
+  <script src="https://unpkg.com/vue-router@4"></script>
+
+  <!-- 科技感字体 -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=JetBrains+Mono:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <!-- 粒子背景 -->
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@3.1.0/tsparticles.bundle.min.js"></script>
+
+  <!-- 全局样式 -->
+  <link rel="stylesheet" href="src/style.css">
+</head>
+
+<body>
+  <div id="particles"></div>
+  <div id="app"></div>
+
+  <script type="module" src="src/main.js"></script>
+
+  <!-- 初始化粒子背景 -->
+  <script>
+    tsParticles.load("particles", {
+      background: { color: "#000000" },
+      fpsLimit: 60,
+      interactivity: {
+        events: { onHover: { enable: true, mode: "repulse" }},
+        modes: { repulse: { distance: 80 }},
+      },
+      particles: {
+        color: { value: "#6b9fff" },
+        links: { enable: true, color: "#4f8cff", distance: 130, opacity: 0.4 },
+        move: { enable: true, speed: 1 },
+        number: { value: 80 },
+        opacity: { value: 0.5 },
+        shape: { type: "circle" },
+        size: { value: { min: 1, max: 3 }},
+      }
+    });
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,728 @@
+/* ============================= */
+/* 全局基础设置 */
+/* ============================= */
+body {
+  margin: 0;
+  background: #000;
+  color: white;
+  font-family: "Poppins", sans-serif;
+}
+
+/* 粒子背景层 */
+#particles {
+  position: fixed;
+  inset: 0;
+  z-index: -10;
+}
+
+/* 页面容器公共样式 */
+.page-center {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ============================= */
+/* 登录界面卡片 */
+/* ============================= */
+.login-card {
+  background: rgba(20, 22, 28, 0.75);
+  backdrop-filter: blur(16px);
+  padding: 40px;
+  width: 420px;
+  border-radius: 18px;
+  box-shadow: 0 0 25px rgba(0, 110, 255, 0.4);
+  border: 1px solid rgba(0, 110, 255, 0.3);
+}
+
+/* 输入框 */
+.input {
+  width: 100%;
+  padding: 12px 14px;
+  margin-top: 12px;
+  border-radius: 8px;
+  border: 1px solid #3a4b6a;
+  background: #0d1118;
+  color: white;
+  font-size: 15px;
+  outline: none;
+  transition: 0.2s;
+}
+
+.input:focus {
+  border-color: #3fa8ff;
+  box-shadow: 0 0 10px rgba(64, 156, 255, 0.6);
+}
+
+/* 登录按钮 */
+.btn-login {
+  margin-top: 20px;
+  width: 100%;
+  padding: 12px 0;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #007bff, #6a5af9);
+  border: none;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.btn-login:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 10px #6a5af9;
+}
+
+/* 登录标题 */
+.login-title {
+  font-size: 28px;
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.login-sub {
+  text-align: center;
+  opacity: 0.75;
+  margin-bottom: 25px;
+  font-size: 14px;
+}
+
+/* ============================= */
+/* 首页样式 */
+/* ============================= */
+.hero-title {
+  font-size: 40px;
+  font-weight: 700;
+  text-align: center;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.hero-title span {
+  color: #4da3ff;
+}
+
+.hero-sub {
+  text-align: center;
+  opacity: 0.7;
+  margin-bottom: 35px;
+  font-size: 16px;
+}
+
+.home-page {
+  padding: 30px;
+}
+
+/* 欢迎区 */
+.welcome h2 {
+  font-size: 32px;
+  color: white;
+}
+
+.welcome h2 span {
+  color: #4da3ff;
+}
+
+.welcome p {
+  opacity: 0.8;
+}
+
+/* 热门赛事 */
+.hot-event {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.event-status {
+  background: #4da3ff;
+  color: white;
+  padding: 6px 14px;
+  border-radius: 12px;
+  width: fit-content;
+  margin-bottom: 8px;
+}
+
+.event-desc {
+  opacity: 0.75;
+  margin: 8px 0;
+}
+
+.countdown-card {
+  padding: 20px;
+  width: 240px;
+  background: linear-gradient(135deg, #4da3ff, #7a5af8);
+  border-radius: 16px;
+  color: white;
+  text-align: center;
+}
+
+.countdown-time {
+  margin-top: 10px;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* 推荐挑战卡片（第一处定义，保留） */
+.challenge-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.challenge-card {
+  background: rgba(20, 20, 28, 0.7);
+  border-radius: 12px;
+  padding: 18px;
+  transition: 0.25s;
+  cursor: pointer;
+  border: 1px solid rgba(90, 130, 255, 0.3);
+  box-shadow: 0 0 10px rgba(60, 90, 255, 0.15);
+}
+
+.challenge-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 10px rgba(120, 150, 255, 0.6);
+}
+
+/* 难度标签（唯一保留版本） */
+.tag {
+  font-size: 13px;
+  padding: 4px 12px;
+  border-radius: 10px;
+  width: fit-content;
+  margin-bottom: 12px;
+  color: white;
+}
+
+.tag.简单 { background: #1a7bff; }
+.tag.中等 { background: #ff9c2b; }
+.tag.困难 { background: #ff4f6a; }
+
+/* ============================= */
+/* 挑战详情页面 */
+/* ============================= */
+.challenge-detail-page {
+  color: #fff;
+  padding: 60px 12%;
+  animation: fadeIn 0.5s ease;
+}
+
+/* 顶部科技光条 */
+.top-glow-line {
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #00f2ff, #00ff95, #00f2ff);
+  box-shadow: 0 0 15px #00f2ff;
+  margin-bottom: 30px;
+  opacity: 0.8;
+}
+
+/* 标题发光 */
+.challenge-title {
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, #00eaff, #3b82f6, #00ffaa);
+  -webkit-background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 12px rgba(0,255,240,0.4);
+}
+
+/* 信息卡片 */
+.info-card {
+  background: rgba(255,255,255,0.05);
+  padding: 20px;
+  border-left: 4px solid #00eaff;
+  margin-bottom: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 12px rgba(0,255,255,0.25);
+}
+
+/* 内容卡片 */
+.detail-card {
+  background: rgba(255,255,255,0.04);
+  padding: 25px 30px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  border: 1px solid rgba(0,255,255,0.15);
+  box-shadow: 0 0 25px rgba(0,255,255,0.08);
+  backdrop-filter: blur(5px);
+}
+
+/* 小节标题 */
+.section-title {
+  font-size: 24px;
+  border-left: 4px solid #00ffd0;
+  padding-left: 12px;
+  margin-bottom: 10px;
+  color: #7dfcff;
+}
+
+/* 文本内容 */
+.section-content {
+  font-size: 17px;
+  line-height: 1.8;
+  opacity: 0.9;
+}
+
+/* Flag 输入 */
+.flag-card {
+  background: rgba(255,255,255,0.04);
+  padding: 25px 30px;
+  border-radius: 10px;
+  border: 1px solid rgba(0,255,255,0.18);
+}
+
+.flag-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.flag-input {
+  flex: 1;
+  padding: 12px;
+  font-size: 16px;
+  background: #0c0f16;
+  color: #00ffd2;
+  border: 1px solid #00ffd2;
+  border-radius: 6px;
+  outline: none;
+  transition: 0.25s;
+}
+
+.flag-input:focus {
+  box-shadow: 0 0 10px #00ffd2;
+}
+
+/* 提交按钮 */
+.flag-btn {
+  padding: 12px 20px;
+  font-size: 16px;
+  background: linear-gradient(90deg, #3b82f6, #00eaff);
+  border: none;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.flag-btn:hover {
+  box-shadow: 0 0 15px rgba(0,255,255,0.7);
+}
+
+.back-btn {
+  padding: 10px 22px;
+  border-radius: 10px;
+  font-size: 14px;
+  color: #ddd;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.back-btn:hover {
+  background: rgba(255, 255, 255, 0.20);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #fff;
+}
+
+/* ===================== */
+/* 🔥 顶部霓虹科技导航栏 */
+/* ===================== */
+
+.navbar-container {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: rgba(10, 12, 20, 0.55);
+  backdrop-filter: blur(10px);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 18px 40px;
+  width: 100%;
+
+  /* ⭐⭐ 核心：确保右侧按钮不会消失 */
+  box-sizing: border-box;
+  overflow: visible;
+}
+
+/* 左侧 LOGO */
+.nav-left {
+  font-size: 24px;
+  font-weight: 700;
+  background: linear-gradient(90deg, #00f2ff, #00ff94);
+  -webkit-background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 8px rgba(0,255,200,0.4);
+}
+
+/* 右侧导航按钮容器 */
+.nav-links {
+  display: flex;
+  gap: 20px;
+
+  /* ⭐ 保证不会被裁切 */
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+/* 单个按钮 */
+.nav-item {
+  padding: 8px 16px;
+  font-size: 16px;
+  color: #d8eaff;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: 0.25s;
+}
+
+/* 悬浮 */
+.nav-item:hover {
+  background: rgba(0,255,255,0.12);
+  box-shadow: 0 0 10px rgba(0,255,255,0.3);
+  transform: translateY(-2px);
+}
+
+/* 选中 */
+.router-link-active {
+  background: linear-gradient(90deg, #009dff, #00ffe0);
+  box-shadow: 0 0 12px rgba(0,255,255,0.5);
+  color: #fff !important;
+}
+
+/* 底部动态光条 */
+.nav-glow-line {
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #00ffe7, #009dff, #7b5bff, #00ffe7);
+  background-size: 300% 100%;
+  animation: flow 8s linear infinite;
+  box-shadow: 0 0 15px #00eaff;
+}
+
+@keyframes flow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 300% 50%; }
+}
+
+
+
+/* ============================= */
+/* 页面切换过渡动画 */
+/* ============================= */
+.fade-slide-enter-from {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.fade-slide-enter-to {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-slide-enter-active {
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+/* ============================= */
+/* 页脚 Footer */
+/* ============================= */
+.footer {
+  background: rgba(15, 18, 28, 0.85);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 40px 0;
+  margin-top: 40px;
+  color: #dbe2ff;
+  backdrop-filter: blur(8px);
+}
+
+.footer-container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+/* 栏标题 */
+.footer-col h3,
+.footer-col h4 {
+  margin-bottom: 12px;
+  font-weight: 700;
+  color: #7a96ff;
+}
+
+/* 简介文本 */
+.footer-col p {
+  opacity: 0.7;
+  line-height: 1.6;
+}
+
+/* 中栏链接 */
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin: 8px 0;
+}
+
+.footer-col ul li a {
+  color: #dbe2ff;
+  text-decoration: none;
+  opacity: 0.75;
+  transition: 0.25s;
+}
+
+.footer-col ul li a:hover {
+  opacity: 1;
+  color: #7a96ff;
+}
+
+@media (max-width: 850px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+
+/* ========================= */
+/* 筛选栏样式 */
+/* ========================= */
+
+.filter-bar {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 15px 20px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  backdrop-filter: blur(6px);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.filter-label {
+  font-size: 15px;
+  color: #82b0ff;
+  font-weight: 600;
+}
+
+.filter-group button {
+  padding: 6px 14px;
+  border: 1px solid rgba(130, 160, 255, 0.25);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #dbe2ff;
+  cursor: pointer;
+  transition: 0.25s;
+  font-size: 14px;
+}
+
+.filter-group button:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(130, 160, 255, 0.45);
+}
+
+.filter-group button.active {
+  background: linear-gradient(90deg, #4da3ff, #7a5af8);
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 0 10px rgba(80, 120, 255, 0.7);
+}
+
+/* 手机适配 */
+@media (max-width: 700px) {
+  .filter-bar {
+    padding: 15px;
+  }
+}
+
+/* 页面整体 */
+.challenge-page {
+  padding: 40px;
+  color: #fff;
+}
+
+/* 标题：左对齐、干净、科技感 */
+.page-title {
+  font-size: 38px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #ffffff;
+  text-align: left;
+}
+
+/* 副标题：左对齐、浅灰、稍小 */
+.page-subtitle {
+  font-size: 18px;
+  opacity: 0.8;
+  margin-bottom: 25px;
+  text-align: left;
+}
+
+/* 搜索框保持左对齐与之前一样 */
+.search-bar {
+  width: 520px;
+  margin-bottom: 25px;
+}
+
+/* 搜索输入框 */
+.search-input {
+  width: 100%;
+  padding: 12px 18px;
+  border-radius: 10px;
+  font-size: 16px;
+  background: #111;
+  border: 1px solid #333;
+  color: #fff;
+  outline: none;
+  box-shadow: 0 0 8px rgba(0,255,255,0.2);
+  transition: 0.25s;
+}
+.search-input:focus {
+  border-color: #00eaff;
+  box-shadow: 0 0 12px rgba(0,255,255,0.4);
+}
+
+/* 筛选栏保持左对齐 */
+.filter-bar {
+  margin: 25px 0 35px 0;
+}
+
+/* 一行一组：难度、分类 */
+.filter-group {
+  margin-bottom: 12px;
+  text-align: left;
+}
+
+/* “难度：/ 类别：” 标签 */
+.filter-label {
+  font-size: 17px;
+  margin-right: 10px;
+}
+
+/* 筛选按钮 */
+.filter-group button {
+  margin-right: 10px;
+  padding: 6px 18px;
+  border-radius: 25px;
+  background: #111;
+  color: #fff;
+  border: 1px solid #333;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.filter-group button:hover {
+  border-color: #00eaff;
+  box-shadow: 0 0 10px rgba(0,255,255,0.4);
+}
+
+.filter-group button.activ
+
+/* ------------------------------ */
+/* 科技风排行榜页面布局           */
+/* ------------------------------ */
+
+.scoreboard-page {
+  padding: 40px;
+  max-width: 900px;
+  margin: auto;
+  color: #fff;
+}
+
+/* 标题科技光效 */
+.page-title {
+  font-size: 38px;
+  margin-bottom: 5px;
+  font-weight: 700;
+  text-shadow: 0 0 10px #00eaff, 0 0 20px #00eaff;
+}
+
+.page-subtitle {
+  font-size: 16px;
+  opacity: 0.75;
+  margin-bottom: 35px;
+}
+
+/* 外层卡片 */
+.rank-card {
+  padding: 25px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+/* 每一条排行榜项 */
+.rank-item {
+  display: grid;
+  grid-template-columns: 50px 150px 1fr 80px;
+  align-items: center;
+  padding: 10px 0;
+  gap: 15px;
+}
+
+.rank-item:last-child {
+  border-bottom: none;
+}
+
+/* 排名数字 */
+.rank-number {
+  font-size: 20px;
+  font-weight: bold;
+  opacity: 0.9;
+  color: #00eaff;
+}
+
+/* 名字 */
+.rank-name {
+  font-size: 18px;
+}
+
+/* 分值 */
+.rank-score {
+  font-size: 18px;
+  font-weight: 600;
+  text-align: right;
+  color: #00ffc8;
+}
+
+/* 进度条背景 */
+.rank-bar {
+  width: 100%;
+  height: 12px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+/* 发光的进度条填充 */
+.rank-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #00eaff, #00ff6a);
+  box-shadow: 0 0 12px #00eaff;
+  border-radius: 6px;
+}
+
